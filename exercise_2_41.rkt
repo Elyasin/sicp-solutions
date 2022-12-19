@@ -48,5 +48,8 @@
 (define (triples-sum triples n)
   (filter (triples-sum? n) triples))
 
-(display (triples-sum (unique-triples 6) 6))
-(newline)
+
+
+
+(triples-sum (unique-triples 6) 6)
+

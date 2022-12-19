@@ -68,4 +68,5 @@
   
   (queen-cols board-size))
 
+; can take a long time on less powerful computers
 (time (queens 8) (void))

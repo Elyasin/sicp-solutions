@@ -69,4 +69,6 @@
   
   (queen-cols board-size))
 
+
+(time (queens 8) (void))
 (queens 8)

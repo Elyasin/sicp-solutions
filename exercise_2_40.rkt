@@ -15,25 +15,25 @@
 
 (define (append list1 list2)
   (if (null? list1)
-    list2
-    (cons (car list1) (append (cdr list1) list2))))
+      list2
+      (cons (car list1) (append (cdr list1) list2))))
 
 (define (accumulate op initial sequence)
   (if (null? sequence)
-    initial
-    (op (car sequence)
-      (accumulate op initial (cdr sequence)))))
+      initial
+      (op (car sequence)
+          (accumulate op initial (cdr sequence)))))
 
 (define (filter predicate sequence) 
   (cond ((null? sequence) '())
         ((predicate (car sequence)) (cons (car sequence) 
-                                    (filter predicate (cdr sequence)))) 
+                                          (filter predicate (cdr sequence)))) 
         (else (filter predicate (cdr sequence)))))
 
 (define (enumerate-interval low high)
   (if (> low high)
-    '()
-    (cons low (enumerate-interval (+ low 1) high))))
+      '()
+      (cons low (enumerate-interval (+ low 1) high))))
 
 (define (flatmap proc seq)
   (accumulate append '() (map proc seq)))
@@ -54,6 +54,6 @@
   (map make-pair-sum 
        (filter prime-sum? (unique-pairs n))))
 
-(display (prime-sum-pairs 6))
-(newline)
 
+
+(prime-sum-pairs 6)
